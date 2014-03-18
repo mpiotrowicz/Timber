@@ -22,9 +22,9 @@
 
 <ul class="pagination-custom">
   {% if paginate.previous %}
-    <li><a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}">&larr;</a></li>
+    <li><a href="{{ paginate.previous.url }}" aria-label="{{ paginate.previous.title }}">&larr;</a></li>
   {% else %}
-    <li class="disabled"><span>&larr;</span></li>
+    <li class="disabled"><span aria-label="previous results">&larr;</span></li>
   {% endif %}
 
   {% for part in paginate.parts %}
@@ -42,8 +42,8 @@
   {% endfor %}
 
   {% if paginate.next %}
-    <li><a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}">&rarr;</a></li>
+    <li><a href="{{ paginate.next.url }}" aria-label="{{ paginate.next.title }}">&rarr;</a></li>
   {% else %}
-    <li class="disabled"><span>&rarr;</span></li>
+    <li class="disabled"><span aria-label="next results">&rarr;</span></li>
   {% endif %}
 </ul>
