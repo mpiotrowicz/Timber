@@ -328,6 +328,9 @@ var ajaxifyShopify = (function(module, $) {
         break;
     }
 
+    // bind esc key to close whichever cart method
+    cartKeyControl();
+
     if ( $addToCart.length ) {
       // Take over the add to cart form submit
       formOverride();
@@ -388,7 +391,7 @@ var ajaxifyShopify = (function(module, $) {
     // Reset the button if a user changes a variation
     $('input[type="checkbox"], input[type="radio"], select', $formContainer).on('click', function() {
       revertFlipButton();
-    })
+    });
 
   };
 
@@ -426,7 +429,7 @@ var ajaxifyShopify = (function(module, $) {
     }
 
     if ($modalContainer) {
-      $modalContainer.addClass('is-visible');
+      $modalContainer.addClass('is-visible').focus();
       $modalOverlay.off( 'click', hideModal );
       $modalOverlay.on( 'click', hideModal );
     }
@@ -499,7 +502,7 @@ var ajaxifyShopify = (function(module, $) {
     }
 
     // Show the drawer
-    $drawerContainer.addClass('is-visible');
+    $drawerContainer.addClass('is-visible').focus();
 
     scrollTop();
 
@@ -679,7 +682,7 @@ var ajaxifyShopify = (function(module, $) {
       items: items,
       totalPrice: Shopify.formatMoney(cart.total_price),
       btnClass: $btnClass
-    }
+    };
     $cartContainer.append(template(data));
 
     // Link up close modal link
@@ -739,7 +742,7 @@ var ajaxifyShopify = (function(module, $) {
       // Mark the cart as built
       cartInit = true;
     });
-  }
+  };
 
   adjustCart = function () {
     // This function runs on load, and when the cart is reprinted
