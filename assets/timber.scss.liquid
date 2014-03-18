@@ -659,6 +659,20 @@ body {
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 
 // ==============================================================================
 // #Typography
@@ -1422,7 +1436,7 @@ a.btn-secondary {
 // #Breadcrumbs
 // ==============================================================================
 .breadcrumb {
-  font-size: 0.75em; //12px
+  font-size: 0.9em; //12px
   margin-bottom: 1em;
 }
 
