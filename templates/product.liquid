@@ -79,8 +79,8 @@
         {% comment %}
           ID addToCartForm is a selector for the ajaxify cart plugin
         {% endcomment %}
-        <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
-
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm" aria-labelledby="headerAddToCartForm">
+          <h3 class="visuallyhidden" id="headerAddToCartForm">Product Options</h3>
           {% comment %}
             Add product variants as a dropdown.
               - By default, each variant (or combination of variants) will display as its own <option>
@@ -147,6 +147,7 @@
         </form>
 
         <div class="product-description rte" itemprop="description">
+          <h3 class="visuallyhidden">Product Description</h3>
           {{ product.description }}
         </div>
 
